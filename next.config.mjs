@@ -1,6 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   /* config options here */
+  paths: {
+    "@/public/*": ["public/*"],
+    "@/app/*": ["src/app/*"],
+    "@/utils/*": ["src/utils/*"],
+    "@/models/*": ["src/models/*"],
+    "@/layout/*": ["src/components/layout/*"],
+    "@/module/*": ["src/components/module/*"],
+    "@/template/*": ["src/components/template/*"],
+    "@/providers/*": ["src/providers/*"],
+    "@/api/*": ["src/app/api/*"],
+    "@/constants/*": ["src/constants/*"],
+  },
 };
 
 export default nextConfig;
