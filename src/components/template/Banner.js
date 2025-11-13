@@ -21,15 +21,18 @@ function Banner() {
   const prev = () =>
     setIndex((prev) => (prev - 1 + cards.length) % cards.length);
   return (
-    <div className="items-center px-8 bg-gray-900">
-      <h1 className="lg:text-2xl mb-6 flex items-center justify-center">
-        جدیدترین مقالات
-      </h1>
+    <div className="container m-auto items-center px-6 bg-gray-900">
+      <div className="flex flex-col items-center justify-center ">
+        <h1 className="lg:text-2xl lg:mb-2 flex items-center justify-center  ">
+          جدیدترین مقالات
+        </h1>
+        <div className="border-b border-gray-500 lg:mb-9 w-35 "></div>
+      </div>
       <div className="  flex gap-6 items-center  ">
         <div className="flex flex-col items-center  ">
           <div className="relative w-full flex flex-col items-center justify-center  ">
             {/* دکمه‌ها بالا */}
-            <div className="flex gap-4 mb-4 relative -bottom-18 pl-2 -left-30 lg:hidden ">
+            <div className="flex gap-4 mb-4 relative -bottom-18 pl-2 -left-20 lg:hidden ">
               <button
                 onClick={prev}
                 className="bg-gray-800 text-white px-3 py-2 rounded-xl hover:bg-gray-700 transition"
@@ -59,7 +62,7 @@ function Banner() {
             src="/images/poster1.png"
             className="max-lg:w-full h-[400px] rounded-xl "
             /> */}
-            <div className="relative -top-45 lg:-top-50 px-8 p-4 bg-[#00000063] rounded-sm">
+            <div className="relative -top-45 lg:-top-60 px-8 p-4 bg-[#00000063] rounded-sm">
               <div className="flex  gap-4 mb-5 ">
                 <span className="text-xs bg-[#6C5DD3] rounded-sm w-15 h-4 text-center opacity-80">
                   سبک پازل

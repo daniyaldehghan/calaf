@@ -54,8 +54,8 @@ export default function ProductCarousel() {
   };
 
   return (
-    <div className="bg-gray-100 dark:bg-gray-900 flex flex-col px-8">
-      <h1 className="relative top-10 text-sm lg:text-2xl px-4 lg:mb-4 font-medium">
+    <div className="container m-auto bg-gray-100 dark:bg-gray-900 flex flex-col px-8">
+      <h1 className="relative top-10 text-sm lg:text-2xl px-4 lg:mt-5 mb-4 font-medium">
         جدیدترین بازی های فروشگاه
       </h1>
       <div className="flex flex-col items-center justify-center max-lg:min-h-[65vh] lg:min-h-[80vh]  transition-colors relative overflow-hidden">
