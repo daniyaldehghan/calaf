@@ -5,6 +5,7 @@ import Banner from "../components/template/Banner";
 import VideoShowcase from "../components/module/VideoGalerry";
 import Treyler from "../components/module/Treyler";
 import TrailerGrid from "../components/module/card";
+import CartPage from "../components/module/Cart";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       {/* </main> */}
       <Treyler />
       <TrailerGrid />
+      {/* <CartPage /> */}
     </div>
   );
 }

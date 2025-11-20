@@ -38,7 +38,7 @@ function Footer() {
           </div>
         </div>
         <div className="w-full h-20 lg:order-3 px-4 max-lg:mt-12 ">
-          <img src="images/enamad.webp" alt="" className="w-16" />
+          <img src="/images/enamad.webp" alt="" className="w-16" />
         </div>
       </div>
       <div className="w-full flex justify-between px-4 py-3  bg-[#FF754C] gap-3">

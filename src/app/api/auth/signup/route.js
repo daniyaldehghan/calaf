@@ -7,7 +7,7 @@ export async function POST(req) {
   try {
     await ConnectDB();
     const { email, password } = await req.json();
-    console.log(email, password);
+    console.log({ email, password });
     if (!email || !password) {
       return NextResponse.json(
         { error: "لطفا اطلاعات معتبر وارد کنید" },
@@ -15,7 +15,8 @@ export async function POST(req) {
       );
     }
     const user = await User.findOne({ email });
-    if (!user) {
+    console.log(user);
+    if (user) {
       return NextResponse.json(
         { erro: "این حساب کاربری وجود دارد" },
         { status: 422 }

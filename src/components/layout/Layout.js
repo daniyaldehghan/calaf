@@ -8,11 +8,12 @@ function Layout({ children }) {
   const pathname = usePathname();
 
   const hideLayout = pathname === "/signup";
+  const hideLayout1 = pathname === "/signin";
   return (
     <>
-      {!hideLayout && <Header />}
+      {!hideLayout && !hideLayout1 && <Header />}
       {children}
-      {!hideLayout && <Footer />}
+      {!hideLayout && !hideLayout1 && <Footer />}
     </>
   );
 }
