@@ -2,24 +2,22 @@ import { getServerSession } from "next-auth";
 import React from "react";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";
-import ConnectDB from "@/src/utils/ConnectDB";
-import Email from "next-auth/providers/email";
-import DashboardSide from "@/src/components/layout/DashboardSide";
 import User from "@/src/models/User";
-export const metadata = {
-  // title: " پنل کاربری مشاوره | املاک",
-};
-async function DashboardLayout({ children }) {
+import Profile from "@/src/models/Profile";
+import DashboardSide from "@/src/components/layout/DashboardSide";
+import AdminPage from "@/src/components/template/AdminPage";
+
+async function page() {
   const session = await getServerSession(authOptions);
   if (!session) redirect("/signin");
-  await ConnectDB();
   const user = await User.findOne({ email: session.user.email });
-  if (!user) return <h3>مشکلی پیش آمده است.</h3>;
+  if (user.role !== "ADMIN") redirect("/dashboard");
+  const profiles = await Profile.find({ published: false });
   return (
     <DashboardSide role={user.role} email={user.email}>
-      {children}
+      <AdminPage profiles={profiles} />
     </DashboardSide>
   );
 }
 
-export default DashboardLayout;
+export default page;

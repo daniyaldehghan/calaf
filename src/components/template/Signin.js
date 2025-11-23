@@ -29,7 +29,6 @@ function Signin() {
     } else {
       toast.success("با موفقیت به حساب کاربری وارد شدید.");
       router.push("/");
-      return;
     }
   };
 

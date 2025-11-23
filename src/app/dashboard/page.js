@@ -2,8 +2,8 @@ import ConnectDB from "@/src/utils/ConnectDB";
 import { getServerSession } from "next-auth";
 import React from "react";
 import { authOptions } from "../api/auth/[...nextauth]/route";
-import User from "@/src/models/Uers";
 import DashboardPage from "@/src/components/template/DashboardPage";
+import User from "@/src/models/User";
 
 async function page() {
   await ConnectDB();
@@ -11,7 +11,7 @@ async function page() {
   const user = await User.findOne({ email: session.user.email });
   return (
     <div>
-      <DashboardPage createdAt={user.createdAt} />
+      <DashboardPage createdAt={JSON.parse(JSON.stringify(user.createdAt))} />
     </div>
   );
 }

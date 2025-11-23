@@ -32,14 +32,14 @@ function Header() {
           </div>
         </div>
 
-        <div className="hidden md:flex  p-2 bg-gray-600 max-lg:w-full rounded-2xl mr-9 lg:w-90 justify-center md:justify-between  ">
-          {/* <input
+        {/* <div className="hidden md:flex  p-2 bg-gray-600 max-lg:w-full rounded-2xl mr-9 lg:w-90 justify-center md:justify-between  "> */}
+        {/* <input
             type="text"
             placeholder="دنبال چی  هستی؟"
             className="hidden focus:outline-0  md:block"
           /> */}
-          <img src="/svg/search.svg" className="w-6 pl-2   " />
-        </div>
+        {/* <img src="/svg/search.svg" className="w-6 pl-2   " />
+        </div> */}
         <div className=" flex items-center justify-center gap-4  text-center ">
           <button
             onClick={() => setOpen(!open)}
@@ -55,7 +55,7 @@ function Header() {
             {theme === "dark" ? "🌙" : "☀️"}
           </button>
           {data ? (
-            <Link href="/">
+            <Link href="/dashboard">
               <button className=" rounded-xl  lg:w-25 h-s8 lg:h-12 hosver:bg-[#5c51a3]  cursor-pointer text-sm lg:text-2xl  flex items-center justify-center  ">
                 <FaUserAlt className="size-5 lg:size-8" />
               </button>

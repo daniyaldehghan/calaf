@@ -1,12 +1,11 @@
 import clientPromise from "@/src/lib/mongodb";
-import User from "@/src/models/Uers";
+import User from "@/src/models/User";
 import { vrifyPassword } from "@/src/utils/auth";
 import ConnectDB from "@/src/utils/ConnectDB";
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import nextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import EmailProvider from "next-auth/providers/email";
-import { signIn } from "next-auth/react";
 export const authOptions = {
   adapter: MongoDBAdapter(clientPromise),
   session: { strategy: "jwt" },

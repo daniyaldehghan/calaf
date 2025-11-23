@@ -1,4 +1,4 @@
-import User from "@/src/models/Uers";
+import User from "@/src/models/User";
 import { hashdPassword } from "@/src/utils/auth";
 import ConnectDB from "@/src/utils/ConnectDB";
 import { NextResponse } from "next/server";
