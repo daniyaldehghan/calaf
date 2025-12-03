@@ -8,17 +8,20 @@ import toast, { Toaster } from "react-hot-toast";
 import TextInput from "../module/TextInput";
 import RadioButton from "../module/RadioButton";
 import TextDate from "../module/TextDate";
+import Workradio from "../module/Workradio";
 
 function AddProfile({ data }) {
   const router = useRouter();
   const [profileData, setProfileData] = useState({
     title: "",
+    name: "",
     description: "",
     location: "",
     phone: "",
     price: "",
     constructionDate: new Date(),
     category: "",
+    story: "",
   });
   useEffect(() => {
     if (data) setProfileData(data);
@@ -55,7 +58,16 @@ function AddProfile({ data }) {
   };
   return (
     <div className="flex flex-col justify-center items-center max-lg:items-center m-auto lg:pxs-12 lg:pys-10 px-4 w-full">
-      <h3 className="lg:text-2xl">{data ? "ویرایش آگهی" : "ثبت آگهی"}</h3>
+      <h3 className="lg:text-2xl dark:text-black">
+        {data ? "ویرایش آگهی" : "ثبت آگهی"}
+      </h3>
+      <TextInput
+        type="text"
+        title="نام و نام خانوادگی"
+        name="name"
+        profileData={profileData}
+        setProfileData={setProfileData}
+      />
       <TextInput
         type="text"
         title="عنوان آگهی"
@@ -70,6 +82,7 @@ function AddProfile({ data }) {
         setProfileData={setProfileData}
         textarea={true}
       />
+      <Workradio profileData={profileData} setProfileData={setProfileData} />
       <TextInput
         title="آدرس"
         name="location"

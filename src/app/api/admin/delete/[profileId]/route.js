@@ -8,7 +8,7 @@ export async function DELETE(req, context) {
   try {
     await ConnectDB();
     const { profileId } = await context.params;
-    console.log(profileId);
+    // console.log(profileId);
     const session = await getServerSession(req);
     if (!session) {
       return NextResponse.json({ error: "ابتدا به حساب کاربری وارد شورید " });
@@ -25,7 +25,7 @@ export async function DELETE(req, context) {
       return NextResponse.json({ error: "دسترسی محدود" }, { status: 401 });
     }
     const res = await Profile.deleteOne({ _id: profileId });
-    console.log("res", res);
+    // console.log("res", res);
     return NextResponse.json(
       { message: "آگهی با موفقیت حذف شد" },
       { status: 201 }

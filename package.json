@@ -27,6 +27,7 @@
     "react-intersection-observer": "^10.0.0",
     "react-loader-spinner": "^8.0.0",
     "react-multi-date-picker": "^4.5.2",
+    "react-simple-typewriter": "^5.0.1",
     "react-spinners": "^0.17.0"
   },
   "devDependencies": {

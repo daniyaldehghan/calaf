@@ -6,9 +6,22 @@ export async function POST(req) {
   try {
     await ConnectDB();
     const { name, email, message, phone } = await req.json();
-    if (!name || !email || !message) {
+    if (!name) {
       return NextResponse.json(
-        { error: "اسم, ایمیل , نام خودرا وارد کنید." },
+        { error: "نام خود راوارد کنید" },
+        { status: 401 }
+      );
+    }
+    if (!email) {
+      return NextResponse.json(
+        { error: "ایمیل خود راوارد کنید" },
+        { status: 401 }
+      );
+    }
+
+    if (!message) {
+      return NextResponse.json(
+        { error: "موضوع پیام خود راوارد کنید" },
         { status: 401 }
       );
     }

@@ -3,8 +3,10 @@
 import { useState } from "react";
 import Loader from "../module/Loader";
 import toast, { Toaster } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 export default function AboutPage() {
+  const router = useRouter();
   const [loading, isloading] = useState("");
   const [form, setForm] = useState({
     name: "",
@@ -33,42 +35,49 @@ export default function AboutPage() {
       toast.success(data.message);
     } else {
       toast.error(data.error);
+      router.push("/");
     }
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6 text-center">تماس با ما</h1>
-      <p className="mb-5">
-        برای اطلاعات بیشتر و ارتباط سریع تر با ما درتماس باشید.
+    <div className="max-w-2xl mx-auto p-6 dark:bg-white">
+      <h1 className="text-3xl font-bold mb-6 text-center dark:text-black">
+        تماس با ما
+      </h1>
+      <p className="mb-5 dark:text-black">
+        برای اطلاعات بیشتر و ارتباط سریع با ما درتماس باشید.
       </p>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block mb-1 font-semibold">نام</label>
+          <label className="block mb-1 font-semibold dark:text-black">
+            نام
+          </label>
           <input
             type="text"
             name="name"
             value={form.name}
             onChange={handleChange}
-            placeholder="نام"
-            className="w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="نام..."
+            className="w-full lg:w-200 border border-gray-300 dark:text-black rounded p-2 dark:placeholder:text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
         <div>
-          <label className="block mb-1 font-semibold">ایمیل</label>
+          <label className="block mb-1 font-semibold dark:text-black">
+            ایمیل
+          </label>
           <input
             type="email"
             name="email"
             value={form.email}
             onChange={handleChange}
-            placeholder="ایمیل"
-            className="w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="ایمیل..."
+            className="w-full lg:w-200 border border-gray-300 dark:text-black dark:placeholder:text-black  rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
         </div>
         <div>
-          <label className="block mb-1 font-semibold">
+          <label className="block mb-1 font-semibold dark:text-black">
             شماره موبایل (اختیاری)
           </label>
           <input
@@ -76,19 +85,19 @@ export default function AboutPage() {
             name="phone"
             value={form.phone}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
+            className="w-full lg:w-200 border border-gray-300 dark:text-black dark:placeholder:text-black  rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
         <div>
-          <label className="block mb-1 font-semibold">پیام</label>
+          <label className="block mb-1 font-semibold dark:text-black">
+            پیام
+          </label>
           <textarea
             name="message"
             value={form.message}
             onChange={handleChange}
             placeholder="چیزی تایپ کنید..."
-            className="w-full border border-gray-300 rounded p-2 h-32 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
+            className="w-full lg:w-200 border border-gray-300 dark:text-black dark:placeholder:text-black  rounded p-2 h-32 focus:outline-none focus:ring-2 focus:ring-blue-500"
           ></textarea>
         </div>
 

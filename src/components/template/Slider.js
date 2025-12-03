@@ -1,24 +1,28 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const slides = [
   {
     id: 1,
-    title: "اسلایدر موشن خفن",
-    subtitle: "حرکت نرم، طراحی مدرن",
+    title: "Call of Duty Warzone",
+    subtitle:
+      "مانند دیگر بازی‌های بتل رویال سوار یک هواپیما خواهید شد و روی نقشه فرود خواهید آمد. وجه تفاوت این بازی نسبت به بقیه در تعداد بازیکنان آن است.",
     image: "./images/slider1.png",
   },
   {
     id: 2,
-    title: "کاملاً واکنش‌گرا",
-    subtitle: "سازگار با موبایل و دسکتاپ",
+    title: "League of Legends",
+    subtitle:
+      "سبک محبوب MOBA از یک نقشه در بازی Warcraft 3 مسیر خود را آغاز کرد. این نقشه که به‌تدریج محبوبیتش در سطح خود بازی اصلی قرار گرفت Dota نام داشت که مخفف عبارت Defense of the Ancients بود. قوانین در Dota ساده‌تر از بازی‌های استراتژیک بود و بازیکن تنها کنترل یک قهرمان به‌خصوص را به‌جای کل ارتش بر عهده می‌گرفت.",
     image: "/images/slider2.png",
   },
   {
     id: 3,
-    title: "قدرت گرفته از Framer Motion",
-    subtitle: "انیمیشن طبیعی و سریع",
+    title: "Call of Duty: WWII",
+    subtitle:
+      "بازی Call of Duty: WWII برای کامپیوتر نسخه  اضافه شد در تمام دنیا بازی‌های سبک اکشن و شوتر را با عنوان Call of Duty می‌شناسند. بی‌شک از اولین سال انتشار این عنوان می‌توان به‌جرئت گفت که هر سال مجموعه بازی‌های Call of Duty مورد انتظارترین عناوین هستند و بعد از انتشار هم برترین عنوان‌ها را کسب می‌کنند. ",
     image: "/images/slider3.jpg",
   },
 ];
@@ -41,7 +45,7 @@ export default function MotionSlider() {
   };
 
   return (
-    <div className="contaienr relative  lg:w-full m-auto lg:h-[80vh] h-[30vh] overflow-hidden shadow-xl">
+    <div className="contaienr relative  lg:w-full m-auto lg:h-[80vh] h-[30vh] overflow-hidden shadow-xl ">
       <AnimatePresence mode="wait">
         <motion.div
           key={slides[current].id}
@@ -50,19 +54,19 @@ export default function MotionSlider() {
           animate="center"
           exit="exit"
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="absolute inset-0 flex items-center   justify-center lg:items-end lg:justify-end px-8 py-20  blur:"
+          className="absolute inset-0 flex items-center   justify-center lg:items-end lg:justify-end px-8 py-20   blur:"
         >
           <img
             src={slides[current].image}
             alt={slides[current].title}
-            className="absolute inset-0 w-full  h-full object-cover brightness-75"
+            className="  absolute inset-0 w-full  h-full  object-cover brightness-85"
           />
-          <div className="relative hidden lg:block text-center backdrop-blur-3xl lg:left-20 p-10 max-lg:top-30  rounded-2xl text-white z-10">
+          <div className="   relative hidden lg:w-150    top-15 lg:block text-center backdrop-blur-3xl lg:left-20 p-10 max-lg:top-30  rounded-2xl text-white z-10">
             <motion.h2
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-4xl md:text-6xl font-bold"
+              className="lg:text-4xl md:text-6xl font-bold text-sm"
             >
               {slides[current].title}
             </motion.h2>
@@ -74,8 +78,8 @@ export default function MotionSlider() {
             >
               {slides[current].subtitle}
             </motion.p>
-            <motion.button className="text-lg border border-gray-400 rounded-2xl p-2 cursor-pointer hover:text-black transition-colors hover:bg-amber-100  text-white md:text-2xl mt-4">
-              بیشتر بدانید
+            <motion.button className="text-lg border  border-gray-400 rounded-2xl p-2 cursor-pointer hover:text-black transition-colors hover:bg-amber-100  text-white md:text-2xl mt-4">
+              <Link href="/store">خرید </Link>
             </motion.button>
           </div>
         </motion.div>

@@ -9,7 +9,7 @@ function TextDate({ profileData, setProfileData }) {
     setProfileData({ ...profileData, constructionDate: deta });
   };
   return (
-    <div className="w-full lg:mr-35 mt-5 ">
+    <div className="w-full lg:mr-35 mt-5  dark:text-black">
       <p>تاریخ ساخت:</p>
       <DatePicker
         className="purple  "

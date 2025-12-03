@@ -6,13 +6,15 @@ import VideoShowcase from "../components/module/VideoGalerry";
 import Treyler from "../components/module/Treyler";
 import TrailerGrid from "../components/module/card";
 import CartPage from "../components/module/Cart";
+import CategoryCard from "../components/template/CategoryCard";
 
 export default function Home() {
   return (
-    <div>
+    <div className="dark:bg-white">
       {/* <main className="bg-g\ay-50 dark:bg-gray-950  dark:text-white transition-colors duration-300"> */}
       <MotionSlider />
       <ProductSlider />
+      <CategoryCard />
       <Banner />
       <VideoShowcase />
       {/* </main> */}

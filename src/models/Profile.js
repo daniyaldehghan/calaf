@@ -6,6 +6,10 @@ const profileSchema = new Schema(
       type: String,
       required: true,
     },
+    name: {
+      type: String,
+      required: true,
+    },
     description: {
       type: String,
       required: true,
@@ -28,7 +32,12 @@ const profileSchema = new Schema(
     },
     category: {
       type: String,
-      enum: ["ps5", "xbox", "ps4", "pc"],
+      enum: ["ps5", "xbox", "ps4", "pc", "all"],
+      required: true,
+    },
+    story: {
+      type: String,
+      enum: ["کارکرده", "نو", "درحدنو"],
       required: true,
     },
 

@@ -1,14 +1,14 @@
 "use client";
 
 import { useCart } from "@/src/context/CartContext";
-
+import { MdDelete } from "react-icons/md";
 // import { useCart } from "@/context/CartContext";
 
 export default function CartItemCard({ item }) {
   const { increase, decrease, remove } = useCart();
   console.log(item);
   return (
-    <div className="flex  max-lg:flex-col justify-between items-center lg:p-6 p-4 bg-zinc-900 rounded-xl shadow-md border border-zinc-800">
+    <div className="flex lg:w-250 lg:h-full   max-lg:flex-col justify-between items-center lg:p-6 p-4 bg-zinc-900 rounded-xl shadow-md border border-zinc-800">
       <h3 className=" hidden max-md:block lg:text-lg text-sm  font-semibold ">
         {item.title}
       </h3>
@@ -42,9 +42,9 @@ export default function CartItemCard({ item }) {
         </button>
         <button
           onClick={() => remove(item.id)}
-          className="px-3 py-1 bg-gray-600 rounded-lg hover:bg-gray-700 transition"
+          className="px-3 psy-1 w-5s  h-8 font-semibold cursor-pointer bg-red-s500 rounded-lg hover:text-red-500 transition hover:rotate-5"
         >
-          s
+          <MdDelete className="size-6" />
         </button>
       </div>
     </div>

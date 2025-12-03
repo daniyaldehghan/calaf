@@ -5,8 +5,10 @@ import React, { useEffect, useMemo, useState } from "react";
 import ProductCard from "../module/Cart";
 import Link from "next/link";
 import Shopcart from "../module/shopcart";
+import { sp } from "@/src/utils/replaceNumber";
 
 export default function ShopPageNoHeader() {
+  const [modal, setmodal] = useState(false);
   const [query, setQuery] = useState("");
   const [debouncedQuery, setDebouncedQuery] = useState("");
   const [selectedPlatforms, setSelectedPlatforms] = useState([]);
@@ -83,8 +85,8 @@ export default function ShopPageNoHeader() {
   );
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-black via-neutral-900 to-neutral-800 text-gray-100 p-4 md:p-8">
-      <div className="mx-auto max-w-7xl">
+    <main className="min-h-screen dark:bg-white   text-gray-100 p-4 md:p-8">
+      <div className="mx-auto max-w-7xl dark:sbg-white">
         {/* Top controls: search + mobile filter toggle */}
         <div className="flex items-center justify-between gap-4 mb-4">
           <div className="flex-1">
@@ -94,7 +96,7 @@ export default function ShopPageNoHeader() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="جستجو بازی، ژانر، ..."
-                className="w-full rounded-2xl bg-neutral-800/60 backdrop-blur-sm border border-neutral-700 py-3 px-4 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full rounded-2xl dark:bg-white dark:text-black bg-neutral-800/60 backdrop-blur-sm border border-neutral-700 py-3 px-4 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
             </label>
           </div>
@@ -110,7 +112,7 @@ export default function ShopPageNoHeader() {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="hidden md:inline-block rounded-xl bg-neutral-800/60 px-3 py-2 border border-neutral-700"
+              className="hidden md:inline-block rounded-xl dark:bg-white dark:text-black bg-neutral-800/60 px-3 py-2 border border-neutral-700"
             >
               <option value="newest">جدیدترین</option>
               <option value="price_low">ارزان‌ترین</option>
@@ -124,16 +126,18 @@ export default function ShopPageNoHeader() {
           {/* Filters sidebar (desktop) */}
           <aside className="hidden md:block md:col-span-3 lg:col-span-2">
             <div className="sticky top-6 space-y-4">
-              <div className="rounded-2xl bg-neutral-900/50 border border-neutral-700 p-4 backdrop-blur-sm">
-                <h3 className="text-sm font-semibold mb-3">پلتفرم</h3>
-                <div className="grid grid-cols-2 gap-2">
+              <div className="rounded-2xl dark:bg-white bg-neutral-900/50 border border-neutral-700 p-4 backdrop-blur-sm">
+                <h3 className="text-sm font-semibold mb-3 dark:text-black">
+                  پلتفرم
+                </h3>
+                <div className="grid grid-cols-2 gap-2 ">
                   {PLATFORMS.map((pl) => (
                     <button
                       key={pl}
                       onClick={() =>
                         toggleArray(setSelectedPlatforms, selectedPlatforms, pl)
                       }
-                      className={`text-sm px-3 py-2 rounded-xl border ${
+                      className={`text-sm px-3 py-2 rounded-xl border dark:text-black dark:bg-white ${
                         selectedPlatforms.includes(pl)
                           ? "bg-indigo-600/80 border-indigo-500"
                           : "bg-neutral-800/40 border-neutral-700"
@@ -145,8 +149,10 @@ export default function ShopPageNoHeader() {
                 </div>
               </div>
 
-              <div className="rounded-2xl bg-neutral-900/50 border border-neutral-700 p-4 backdrop-blur-sm">
-                <h3 className="text-sm font-semibold mb-3">ژانر</h3>
+              <div className="rounded-2xl bg-neutral-900/50 border dark:bg-white border-neutral-700 p-4 backdrop-blur-sm">
+                <h3 className="text-sm font-semibold mb-3 dark:text-black">
+                  ژانر
+                </h3>
                 <div className="flex flex-wrap gap-2">
                   {GENRES.map((g) => (
                     <button
@@ -154,7 +160,7 @@ export default function ShopPageNoHeader() {
                       onClick={() =>
                         toggleArray(setSelectedGenres, selectedGenres, g)
                       }
-                      className={`text-sm px-3 py-2 rounded-full border ${
+                      className={`text-sm px-3 py-2 rounded-full border dark:bg-white dark:text-black ${
                         selectedGenres.includes(g)
                           ? "bg-purple-600/70 border-purple-500"
                           : "bg-neutral-800/40 border-neutral-700"
@@ -166,7 +172,7 @@ export default function ShopPageNoHeader() {
                 </div>
               </div>
 
-              <div className="rounded-2xl bg-neutral-900/50 border border-neutral-700 p-4 backdrop-blur-sm">
+              <div className="rounded-2xl dark:text-black dark:bg-white bg-neutral-900/50 border border-neutral-700 p-4 backdrop-blur-sm">
                 <h3 className="text-sm font-semibold mb-3">قیمت (تومان)</h3>
                 <div className="space-y-2">
                   <div className="text-xs text-neutral-400">
@@ -199,7 +205,7 @@ export default function ShopPageNoHeader() {
                 </div>
               </div>
 
-              <div className="rounded-2xl bg-neutral-900/40 border border-neutral-700 p-3">
+              <div className="rounded-2xl dark:bg-white bg-neutral-900/40 border border-neutral-700 p-3">
                 <button
                   onClick={() => {
                     setSelectedGenres([]);
@@ -208,7 +214,7 @@ export default function ShopPageNoHeader() {
                     setQuery("");
                     setSortBy("newest");
                   }}
-                  className="w-full rounded-xl py-2 hover:bg-purple-900 transition-colors bg-neutral-800/50 border border-neutral-700"
+                  className="w-full dark:hover:text-white dark:text-black dark:bg-white rounded-xl py-2 hover:bg-purple-900 transition-colors bg-neutral-800/50 border border-neutral-700"
                 >
                   پاکسازی فیلترها
                 </button>
@@ -320,7 +326,7 @@ export default function ShopPageNoHeader() {
 
             {/* Product count and sort for mobile */}
             <div className="flex items-center justify-between mb-4">
-              <div className="text-sm text-neutral-300">
+              <div className="text-sm text-neutral-300 dark:text-black font-semibold">
                 نمایش {productsFiltered.length} محصول
               </div>
               <div className="md:hidden">
@@ -347,7 +353,7 @@ export default function ShopPageNoHeader() {
                 return (
                   <article
                     key={p.id}
-                    className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-neutral-900/60 to-neutral-800/40 border border-neutral-700 shadow-lg"
+                    className="relative rounded-2xl overflow-hidden dark:bg-white bg-neutral-900 border border-neutral-700 shadow-lg"
                   >
                     <div className="aspect-[4/5] w-full relative">
                       {/* Replace with next/image if you want optimization */}
@@ -360,37 +366,39 @@ export default function ShopPageNoHeader() {
 
                     <div className="p-3 space-y-4 ">
                       <div className="lg:flex items-center  lg:flex-col-reverse">
-                        <div className="text-xs text-center mb-2 lg:px-2 py-1 px-1 w-25  rounded-sm  bg-neutral-800/50 border border-neutral-700">
+                        <div className="text-xs text-center dark:bg-white dark:text-black mb-2 lg:px-2 py-1 px-1 w-25  rounded-sm  bg-neutral-800/50 border border-neutral-700">
                           {p.platforms.join(", ")}
                         </div>
-                        <h4 className="text-[12px] lg:text-[16px] lg:mb-2  font-semibold line-clamdp-2">
+                        <h4 className="text-[12px] dark:text-black lg:text-[16px] lg:mb-2  font-semibold line-clamdp-2">
                           {p.title}
                         </h4>
                       </div>
                       <div className="flex items-center justify-between">
                         <div>
                           {p.discount ? (
-                            <div className="flex items-baseline gap-2">
-                              <span className="text-sm font-bold">
-                                {finalPrice.toFixed(2)} تومان
+                            <div className="flex items-baseline gap-2  max-lg:flex-col ">
+                              <span className="text-sm dark:text-black ">
+                                {sp(finalPrice)} تومان
                               </span>
-                              <span className="text-xs line-through text-neutral-400">
-                                {p.price.toFixed(2)}
-                              </span>
-                              <span className="text-xs bg-emerald-600/80 px-2 py-1 rounded">
-                                -{p.discount}%
-                              </span>
+                              <div className="  lg:flex  lg:flex-row-reverse lg:gap-2 justify-center lg:items-center">
+                                <span className="text-xs dark:text-gray-800 line-through text-neutral-400">
+                                  {sp(p.price)}
+                                </span>
+                                <span className="text-xs bg-emerald-600/80 px-2 py-1 rounded">
+                                  -{p.discount}%
+                                </span>
+                              </div>
                             </div>
                           ) : (
                             <div>
-                              <span className="text-sm font-bold">
-                                {p.price.toFixed(2)} تومان
+                              <span className="text-sm font-bold dark:text-black">
+                                {sp(p.price)} تومان
                               </span>
                             </div>
                           )}
                         </div>
 
-                        <div className="text-xs text-neutral-400">
+                        <div className="text-xs text-neutral-400 dark:text-gray-700">
                           {p.rating} ⭐
                         </div>
                       </div>
@@ -400,13 +408,18 @@ export default function ShopPageNoHeader() {
                           product={p}
                           available={p.available}
                         />
-                        <Link href="/dashboard/checkout">🛒</Link>
                         {/* <Shopcart /> */}
 
-                        <button className="px-3 py-2 rounded-xl border border-neutral-700">
+                        <button className="px-3 py-2 rounded-xl dark:bg-white dark:text-black border border-neutral-700">
                           جزئیات
                         </button>
                       </div>
+                      <Link
+                        href="/dashboard/checkout"
+                        className="text-center flex justify-center "
+                      >
+                        🛒
+                      </Link>
                     </div>
 
                     {/* hover neon outline */}

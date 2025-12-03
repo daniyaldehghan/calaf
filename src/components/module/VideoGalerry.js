@@ -6,19 +6,19 @@ const videos = [
     id: 1,
     title: "Metal Gear Solid Delta: Snake Eater",
     poster: "/images/0.jpg",
-    video: "/video/anim1.mp4",
+    video: "/video/metal.mp4",
   },
   {
     id: 2,
     title: " The Last of Us Part 1",
     poster: "/images/2.png",
-    video: "/video/anim1.mp4",
+    video: "/video/last.mp4",
   },
   {
     id: 3,
     title: "Alan Wake 2",
     poster: "/images/1.jpg",
-    video: "/video/anim1.mp4",
+    video: "/video/alen.mp4",
   },
 ];
 
@@ -28,12 +28,12 @@ export default function VideoShowcase() {
   const handleClose = () => setActiveVideo(null);
 
   return (
-    <div className="container mx-auto  px-6 py-10 bg-gray-900 relative -top-30">
+    <div className="container mx-auto  px-6 py-10 bg-grsay-900 relative -top-30">
       <div className="flex flex-col justify-center items-center">
-        <h2 className="text-xl lg:2xl font-medium text-center     ">
+        <h2 className="text-xl dark:text-black lg:2xl font-medium text-center     ">
           جدیدترین نقد و بررسی ها
         </h2>
-        <div className="border-b border-gray-500 mb-9 w-50 mt-4 "></div>
+        <div className="border-b dark:border-gray-700 border-gray-500 mb-9 w-50 mt-4 "></div>
       </div>
 
       {/* کارت‌ها */}

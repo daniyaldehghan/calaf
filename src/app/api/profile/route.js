@@ -34,6 +34,8 @@ export async function POST(req) {
       price,
       constructionDate,
       category,
+      name,
+      story,
     } = body;
     const session = await getServerSession(req);
     if (!session) {
@@ -57,7 +59,9 @@ export async function POST(req) {
       !phone ||
       !price ||
       !constructionDate ||
-      !category
+      !category ||
+      !name ||
+      !story
     ) {
       return NextResponse.json(
         { error: "لطفا مقدار معتبر وارد کنید" },
@@ -69,9 +73,11 @@ export async function POST(req) {
       description,
       location,
       phone,
+      name,
       price: +price,
       constructionDate,
       category,
+      story,
       userId: new Types.ObjectId(user._id),
     });
     console.log(newProfile);
@@ -98,8 +104,10 @@ export async function PATCH(req) {
       location,
       phone,
       price,
+      name,
       constructionDate,
       category,
+      story,
     } = body;
     const session = await getServerSession(req);
     if (!session) {
@@ -120,7 +128,9 @@ export async function PATCH(req) {
       !phone ||
       !price ||
       !constructionDate ||
-      !category
+      !category ||
+      !name ||
+      !story
     ) {
       return NextResponse.json(
         { error: "لطفا مقدار معتبر وارد کنید" },
@@ -135,12 +145,15 @@ export async function PATCH(req) {
       );
     }
     ProfileId.title = title;
+    ProfileId.name = name;
     ProfileId.description = description;
     ProfileId.location = location;
     ProfileId.phone = phone;
     ProfileId.price = price;
     ProfileId.constructionDate = constructionDate;
     ProfileId.category = category;
+    ProfileId.story = story;
+
     ProfileId.save();
     return NextResponse.json(
       { message: "آگهی با موفقیت ویرایش شد." },

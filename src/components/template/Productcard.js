@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const products = [
   {
@@ -54,8 +55,8 @@ export default function ProductCarousel() {
   };
 
   return (
-    <div className="container m-auto bg-gray-100 dark:bg-gray-900 flex flex-col px-8">
-      <h1 className="relative top-10 text-sm lg:text-2xl px-4 lg:mt-5 mb-4 font-medium">
+    <div className="container m-auto   flex flex-col px-8">
+      <h1 className="relative top-10 text-sm dark:text-black lg:text-2xl px-4 lg:mt-5 mb-4 font-medium">
         جدیدترین بازی های فروشگاه
       </h1>
       <div className="flex flex-col items-center justify-center max-lg:min-h-[65vh] lg:min-h-[80vh]  transition-colors relative overflow-hidden">
@@ -65,7 +66,7 @@ export default function ProductCarousel() {
             return (
               <motion.div
                 key={product.id}
-                className={`absolute w-[60%] lg:w-full md:w-[50%] h-[350px]  lg:h-[400px] rounded-2xl shadow-lg overflow-hidden transition-all duration-700 ${
+                className={`absolute w-[60%] mt-5 lg:w-150 md:w-[50%] h-[350px]  lg:h-[500px] rounded-2xl shadow-lg overflow-hidden transition-all duration-700 ${
                   pos === "center"
                     ? "z-30 scale-100"
                     : pos === "left" || pos === "right"
@@ -108,8 +109,8 @@ export default function ProductCarousel() {
                         {product.desc}
                       </p>
                     )}
-                    <motion.button className="bg-[#FF754C] text-white px-4 py-2 rounded-xl hover:bg-[#e68365] transition cursor-pointer">
-                      خرید
+                    <motion.button className="bg-[#FF754C] text-white dark:text-black px-4 py-2 rounded-xl hover:bg-[#e68365] transition cursor-pointer">
+                      <Link href="/store"> خرید</Link>
                     </motion.button>
                   </div>
                 </div>
@@ -120,13 +121,13 @@ export default function ProductCarousel() {
           {/* دکمه‌های کنترل */}
           <button
             onClick={prevSlide}
-            className="absolute left-4  bg-gray-800/50 font-bold text-xl hover:bg-gray-800/70 text-white rounded-full w-10 h-10 flex items-center justify-center z-40"
+            className="absolute left-4 dark:text-black dark:bg-white bg-gray-800/50 font-bold text-xl hover:bg-gray-800/70 text-white rounded-full w-10 h-10 flex items-center justify-center z-40"
           >
             ›
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-4 font-bold text-xl  bg-gray-800/50 hover:bg-gray-800/70 text-white rounded-full w-10 h-10 flex items-center justify-center z-40"
+            className="absolute right-4 font-bold text-xl dark:text-black dark:bg-white bg-gray-800/50 hover:bg-gray-800/70 text-white rounded-full w-10 h-10 flex items-center justify-center z-40"
           >
             ‹
           </button>

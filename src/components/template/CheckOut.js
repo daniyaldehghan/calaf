@@ -18,7 +18,11 @@ function CheckOut() {
   }, []);
   if (!isMounted) return null; // یا لودینگ
   if (items.length === 0)
-    return <p className="lg:p-6 p-2 flex  text-center">سبد خرید خالی است.</p>;
+    return (
+      <p className="lg:p-6 p-2 flex  text-center dark:text-black">
+        سبد خرید خالی است.
+      </p>
+    );
 
   const total = items.reduce((sum, item) => sum + item.price * item.qty, 0);
   const sellHandler = () => {
@@ -32,8 +36,8 @@ function CheckOut() {
     }
   };
   return (
-    <div className="p-6 flex flex-col gap-4 max-w-4xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">سبد خرید شما</h1>
+    <div className="p-s6 flex flex-col gap-4 max-w-4xl mx-auto">
+      <h1 className="text-2xl font-bold mb-4 dark:text-black">سبد خرید شما</h1>
 
       {items.map((item) => (
         <CartItemCard key={item.id} item={item} />
@@ -42,7 +46,7 @@ function CheckOut() {
       <div className="mt-6 text-right text-xl font-bold">
         جمع کل: {total} تومان
       </div>
-      <div className="flex justify-between">
+      <div className="flex justify-between lg:w-250">
         <Link href="/store">
           <button className="mt-4 px-6 py-3 bg-blue-600 rounded-lg text-white hover:bg-blue-700 transition">
             ادامه خرید

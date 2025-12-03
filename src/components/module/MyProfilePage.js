@@ -5,7 +5,9 @@ function MyProfilePage({ profiles }) {
   // console.log({ profiles });
   return (
     <div>
-      {profiles.length ? null : <p>هیچ آگهی ثبت نشده</p>}
+      {profiles.length ? null : (
+        <p className="dark:text-black">هیچ آگهی ثبت نشده</p>
+      )}
 
       {profiles.map((i) => (
         <DashboardCard key={i._id} data={JSON.parse(JSON.stringify(i))} />
@@ -15,4 +17,4 @@ function MyProfilePage({ profiles }) {
 }
 
 export default MyProfilePage;
-23285
+23285;

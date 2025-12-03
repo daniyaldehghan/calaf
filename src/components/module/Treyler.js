@@ -7,12 +7,12 @@ function Treyler() {
 
   return (
     <div className="w-full lg:mt-4 px-6 mb-6 relative -top-15 bg-rsed-50 flex flex-col justify-center items-center ">
-      <h4 className="lg:text-2xl">تریلر بازی ها</h4>
+      <h4 className="lg:text-2xl dark:text-black">تریلر بازی ها</h4>
       <div className="border-b border-gray-500 mt-1 mb-4  w-20  "></div>
 
-      <div className="bg-[#1b1d24] rounded-2xl p-2">
+      <div className="bg-[#1b1d24] rounded-2xl dark:bg-gray-300 lg:text-2xl">
         <video
-          src="/video/anim1.mp4"
+          src="/video/metal.mp4"
           poster="/images/poster.png"
           controls={playing}
           ref={videoRef}
@@ -31,10 +31,10 @@ function Treyler() {
           </button>
         )}
         <div className="bg-red-3d00   px-6 py-14">
-          <h4 className="mb-4 text-2xl lg:text-4xl ">
+          <h4 className="mb-4 text-2xl lg:text-4xl dark:text-black">
             تریلر رسمی بازی Metal Gear Solid Delta: Snake Eater
           </h4>
-          <p className="text-xs lg:text-xl lg:w-240 ">
+          <p className="text-xs lg:text-xl lg:w-240 dark:text-black ">
             شایعه ساخت Metal Gear Solid Delta: Snake Eater قوت گرفت. طبق گفته ها
             و نشریات وابسته به استودیو های سازنده این عنوان خاطره انگیز، خبر های
             خوبی از ساخت نسخه ریمیک و یا همان بهبود یافته در راه است.
@@ -43,7 +43,7 @@ function Treyler() {
 
           <div className="flex gap-2 items-center ">
             <img src="/images/share.png" className="size-4  col lg:size-6 " />
-            <span>اشتراک گذاری</span>
+            <span className="dark:text-black">اشتراک گذاری</span>
           </div>
         </div>
       </div>
