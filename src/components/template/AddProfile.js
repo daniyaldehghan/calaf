@@ -23,6 +23,7 @@ function AddProfile({ data }) {
     category: "",
     story: "",
   });
+  console.log(profileData);
   useEffect(() => {
     if (data) setProfileData(data);
   }, []);
@@ -48,6 +49,7 @@ function AddProfile({ data }) {
       headers: { "Content-Type": "application/json" },
     });
     const data = await res.json();
+    console.log(data);
     if (data.error) {
       toast.error(data.error);
     } else {

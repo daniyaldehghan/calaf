@@ -10,7 +10,7 @@ function TextDate({ profileData, setProfileData }) {
   };
   return (
     <div className="w-full lg:mr-35 mt-5  dark:text-black">
-      <p>تاریخ ساخت:</p>
+      <p>تاریخ انتشار:</p>
       <DatePicker
         className="purple  "
         calendar={persian}

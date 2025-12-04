@@ -14,7 +14,7 @@ function Footer() {
     });
     const data = await res.json();
     if (data.error) {
-      toast.error("لطفا اطلاعات معتبر وارد کنید");
+      toast.error(data.error);
     } else {
       toast.success(data.success);
     }
@@ -28,10 +28,10 @@ function Footer() {
             <input
               type="email"
               value={email}
-              required
               placeholder="ایمیل خود را وارد کنید"
               className="placeholder:text-[#2222224A] text-black text-sm font-medium focus:outline-0 flex-1 px-2 dark:text-white dark:placeholder:text-white "
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
             <button
               onClick={emailHandler}

@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation";
 import Card from "./CardPage";
 
 function DashboardCard({ data }) {
-  console.log(data.published);
   const router = useRouter();
   const editHandler = () => {
     router.push(`/dashboard/my-profile/${data._id}`);
@@ -26,7 +25,7 @@ function DashboardCard({ data }) {
     }
   };
   return (
-    <div className="bg-resdd-100 border  border-blue-500 lg:flex  lg:w-250  m-[0px_2px_10px_2px] rounded-xl md:w-150">
+    <div className="bg-resdd-100 border   border-blue-500 lg:flex  lg:w-250  m-[0px_2px_10px_2px] rounded-xl md:w-150">
       {/* <h1 className="text-white">asdadad</h1> */}
       <Card data={data} />
       <div className="flex justify-between mb-2 p-2   lg:gap-6 lg:items-end lg:text-center ">

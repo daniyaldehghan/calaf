@@ -12,6 +12,11 @@ export async function POST(req) {
         { status: 500 }
       );
     }
+    const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    if (!email || !isValidEmail(email)) {
+      return Response.json({ error: "ایمیل معتبر نیست" }, { status: 400 });
+    }
     const newuseremail = await Join.create({
       email,
     });

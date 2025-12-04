@@ -8,8 +8,8 @@ async function SideBar() {
     { xbox: "xbox" },
   ];
   return (
-    <div className="flex lg:flex-col w-full lg:w-50 max-lg:mb-10   shadow-[0_1px_5px_0_#FFF] dark:shadow-[0_1px_5px_0_black] p-3 lg:h-70  gap-3 ">
-      <p className="lg:text-2xl text-xs dark:text-black max-lg:w-20 text-gray-400  ">
+    <div className="flex lg:flex-col sticky  top-70 w-full lg:w-50 max-lg:mb-10   shadow-[0_1px_5px_0_#FFF] dark:shadow-[0_1px_5px_0_black] p-3 lg:h-70  gap-3 ">
+      <p className="lg:text-2xl text-xs  dark:text-black max-lg:w-20 text-gray-400  ">
         دسته بندی
       </p>
       <div className="hidden lg:block border text-red-800 mt-2 mb-2 "></div>
@@ -29,7 +29,6 @@ async function SideBar() {
           >
             {Object.values(query)}
           </Link>
-          
         ))}
       </div>
     </div>

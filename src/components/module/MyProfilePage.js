@@ -2,7 +2,7 @@ import React from "react";
 import DashboardCard from "./DashboardCard";
 
 function MyProfilePage({ profiles }) {
-  // console.log({ profiles });
+  console.log({ profiles });
   return (
     <div>
       {profiles.length ? null : (

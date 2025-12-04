@@ -52,6 +52,31 @@ export async function POST(req) {
         { status: 401 }
       );
     }
+    const nosabt = await Profile.find({ userId: user._id });
+    // if (nosabt.length >= 3) {
+    //   return NextResponse.json(
+    //     { error: "شما اجازه ثبت  بیشتر از 3 آگهی را ندارید!" },
+    //     { status: 500 }
+    //   );
+    // }
+    const start = new Date();
+    start.setHours(0, 0, 0, 0); // 00:00 روز
+
+    const end = new Date();
+    end.setHours(23, 59, 59, 999); // 23:59 روز
+
+    const datas = await Profile.find({
+      createdAt: {
+        $gte: start,
+        $lte: end,
+      },
+    });
+    if (datas.length >= 2) {
+      return NextResponse.json(
+        { error: "شما اجازه ثبت  بیشتر از 2 آگهی در روز را ندارید!" },
+        { status: 500 }
+      );
+    }
     if (
       !title ||
       !description ||
@@ -114,7 +139,7 @@ export async function PATCH(req) {
       return NextResponse.json({ error: "ابتدا به حساب کاربری وارد شورید " });
     }
     const user = await User.findOne({ email: session.user.email });
-    console.log(user);
+    // console.log(user);
     if (!user) {
       return NextResponse.json(
         { error: "حساب با این نام کاربری یافت نشد" },
