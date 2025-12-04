@@ -6,7 +6,7 @@ function Treyler() {
   const videoRef = useRef(null);
 
   return (
-    <div className="w-full lg:mt-4 px-6 mb-6 relative -top-15 bg-rsed-50 flex flex-col justify-center items-center ">
+    <div className=" lg:mt-4 px-6 mb-6 relative -top-15 bg-rsed-50 flex flex-col justify-center items-center ">
       <h4 className="lg:text-2xl dark:text-black">تریلر بازی ها</h4>
       <div className="border-b border-gray-500 mt-1 mb-4  w-20  "></div>
 
@@ -16,7 +16,7 @@ function Treyler() {
           poster="/images/poster.png"
           controls={playing}
           ref={videoRef}
-          className="lg:w-370 w-150 h-[30vh] lg:h-[70vh] object-cover rounded-2xl"
+          className="lg:w-370 w-150 h-[30vh] lg:h-200 object-cover rounded-2xl"
           onPlay={() => setPlaying(true)}
           onPause={() => setPlaying(false)}
         />

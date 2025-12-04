@@ -52,16 +52,16 @@ function Footer() {
             </label>
             <div className="w-full mb-5  lg:w-200 h-10 col-span-8 hidden lg:block max-lg:peer-checked:block">
               <ul className="text-xs  flex flex-col max-lg:bg-gray-700 max-lg:rounded-lg max-lg:*:px-4 *py-2 max-lg:divide-y divide-gray-100 max:lg-mt-2 p-1">
-                <Link href="#" className="mb-2 ">
+                <Link href="/sellgame" className="mb-2 dark:text-black ">
                   جدیدترین بازی ها
                 </Link>
-                <Link href="/store" className="mb-2 ">
+                <Link href="/store" className="mb-2  dark:text-black">
                   فروشگاه
                 </Link>
-                <Link href="#" className="mb-2 ">
+                <Link href="#" className="mb-2 dark:text-black ">
                   مقالات
                 </Link>
-                <Link href="/about" className="mb-2 ">
+                <Link href="/about" className="mb-2 dark:text-black ">
                   تماس با ما
                 </Link>
               </ul>

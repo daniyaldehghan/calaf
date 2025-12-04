@@ -4,7 +4,10 @@ import React from "react";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 import DashboardPage from "@/src/components/template/DashboardPage";
 import User from "@/src/models/User";
-
+export const metadata = {
+  title: " گیم مکس | پنل کاربری",
+  description: "سایت فروش بازی",
+};
 async function page() {
   await ConnectDB();
   const session = await getServerSession(authOptions);

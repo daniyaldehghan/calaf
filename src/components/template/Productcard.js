@@ -41,10 +41,10 @@ export default function ProductCarousel() {
   const prevSlide = () =>
     setIndex((prev) => (prev - 1 + products.length) % products.length);
 
-  //   useEffect(() => {
-  //     const timer = setInterval(() => nextSlide(), 5000);
-  //     return () => clearInterval(timer);
-  //   }, []);
+  // useEffect(() => {
+  //   const timer = setInterval(() => nextSlide(), 3000);
+  //   return () => clearInterval(timer);
+  // }, []);
 
   const getPosition = (i) => {
     const diff = (i - index + products.length) % products.length;

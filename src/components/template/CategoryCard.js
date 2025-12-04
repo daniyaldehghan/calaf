@@ -12,10 +12,10 @@ function CategoryCard() {
         {servises.map((i) => (
           <li
             key={i}
-            className="bg-blue-600 dark:text-black lg:w-12 lg:h-8 flex max-lg:p-2  lg:w-20 lg:justify-center items-center  rounded-xl"
+            className="bg-[#1ABC9C] dark:text-black  lg:h-8 flex max-lg:p-2 w-12   lg:w-20 justify-center items-center  rounded-xl"
           >
             {/* <FiCircle className=" " /> */}
-            <span>{i}</span>
+            <span className=" leading-5 text-center">{i}</span>
           </li>
         ))}
       </ul>

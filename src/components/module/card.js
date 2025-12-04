@@ -61,7 +61,7 @@ export default function TrailerGrid() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto lg:block">
+    <div className="max-w-7sxl container lg:px-8 mx-auto lg:block">
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-md:px-6 ">
         {data.map((item, idx) => {
           const isPlaying = playingId === item.id;

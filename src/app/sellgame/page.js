@@ -2,6 +2,10 @@ import SellGame from "@/src/components/template/SellGame";
 import Profile from "@/src/models/Profile";
 import ConnectDB from "@/src/utils/ConnectDB";
 import React from "react";
+export const metadata = {
+  title: " گیم مکس | آگهی های بازی",
+  description: "سایت فروش بازی",
+};
 
 async function page({ searchParams }) {
   const resolvedParams = await searchParams;

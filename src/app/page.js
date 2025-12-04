@@ -7,6 +7,7 @@ import Treyler from "../components/module/Treyler";
 import TrailerGrid from "../components/module/card";
 import CartPage from "../components/module/Cart";
 import CategoryCard from "../components/template/CategoryCard";
+import Aboutus from "../components/module/aboutus";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       {/* </main> */}
       <Treyler />
       <TrailerGrid />
+      <Aboutus />
       {/* <CartPage /> */}
     </div>
   );
