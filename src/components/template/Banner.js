@@ -105,7 +105,7 @@ function Banner() {
           </div>
         </div>
         <div className="hidden lg:block relative -top-30   ">
-          <div className="bg-gray-800 dark:bg-gray-300 w-230 h-60  rounded-3xl flex gap-10 px-2  items-center  hover:bg-[#6C5DD34A] ">
+          <div className="bg-gray-800 dark:bg-gray-300 w-170 h-60  rounded-3xl flex gap-10 px-2  items-center  hover:bg-[#6C5DD34A] ">
             <img
               src="/images/nba.png"
               className="w-60 rounded-3xl h-[220px] "
@@ -133,7 +133,7 @@ function Banner() {
               </button>
             </div>
           </div>
-          <div className="bg-gray-800 dark:bg-gray-300 w-230 h-60  rounded-3xl flex gap-10 mt-4 px-2 pt-2 items-center  hover:bg-[#6C5DD34A] ">
+          <div className="bg-gray-800 dark:bg-gray-300 w-170 h-60  rounded-3xl flex gap-10 mt-4 px-2 pt-2 items-center  hover:bg-[#6C5DD34A] ">
             <img
               src="/images/asasins.png"
               className="w-60 rounded-3xl h-[220px] "
@@ -161,7 +161,7 @@ function Banner() {
               </button>
             </div>
           </div>
-          <div className="bg-gray-800 dark:bg-gray-300 w-25=30 h-60  rounded-3xl flex gap-10 px-2 mt-4 items-center  hover:bg-[#6C5DD34A] ">
+          <div className="bg-gray-800 dark:bg-gray-300 w-170 h-60  rounded-3xl flex gap-10 px-2 mt-4 items-center  hover:bg-[#6C5DD34A] ">
             <img
               src="/images/thelastof.png"
               className="w-60 rounded-3xl h-[220px] "

@@ -17,12 +17,12 @@ function Header() {
     return <button className="p-2 rounded  dark:bg-gray-7s00">...</button>;
   }
   return (
-    <div className=" dark:bg-white constainer w-full m-auto px-6 py-4">
+    <div className=" dark:bg-white w-full m-auto px-4 py-4">
       <div className="flex justify-between items-center    px-6 py-4  lg:px-8 lg:py-14  gap-8">
         <div className="flex items-center text-center gap-2 lg:gap-6 ">
           <img src="/svg/game.svg" className="size-10 lg:size-20 ml-5" />
           <div>
-            <ul className="hidden  lg:flex max-lg:w-60  max-lg:gap-4 items-center gap-2  lg:gap-6 text-xs  lg:text-2xl font-medium text-[#C6C6C6] dark:text-black">
+            <ul className="hidden  lg:flex max-lg:w-60  max-lg:gap-4 items-center gap-2  lg:gap-8 text-xs  lg:text-2xl font-medium lg:w-140 text-[#C6C6C6] dark:text-black">
               <Link href="/">خانه</Link>
               <Link href="/store">فروشگاه</Link>
               <Link href="/sellgame">فروش بازی</Link>

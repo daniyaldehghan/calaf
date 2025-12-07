@@ -45,7 +45,7 @@ export default function MotionSlider() {
   };
 
   return (
-    <div className="contaienr relative  lg:w-full m-auto lg:h-[80vh] h-[30vh] overflow-hidden shadow-xl ">
+    <div className="contaienr relative  lg:w-full m-auto lg:h-[110vh] h-[30vh] overflow-hidden shadow-xl ">
       <AnimatePresence mode="wait">
         <motion.div
           key={slides[current].id}
@@ -61,7 +61,7 @@ export default function MotionSlider() {
             alt={slides[current].title}
             className="  absolute inset-0 w-full  h-full  object-cover brightness-85"
           />
-          <div className="   relative hidden lg:w-150    top-15 lg:block text-center backdrop-blur-3xl lg:left-20 p-10 max-lg:top-30  rounded-2xl text-white z-10">
+          <div className="   relative hidden lg:w-120    top-8 lg:block text-center backdrop-blur-3xl lg:left-3 p-10 max-lg:top-30  rounded-2xl text-white z-10">
             <motion.h2
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
