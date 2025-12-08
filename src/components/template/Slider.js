@@ -31,12 +31,12 @@ export default function MotionSlider() {
   const [current, setCurrent] = useState(0);
 
   // تغییر خودکار هر ۵ ثانیه
-  //   useEffect(() => {
-  //     const timer = setInterval(() => {
-  //       setCurrent((prev) => (prev + 1) % slides.length);
-  //     }, 5000);
-  //     return () => clearInterval(timer);
-  //   }, []);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   const variants = {
     enter: { opacity: 0, x: 100 },
