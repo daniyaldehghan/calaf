@@ -22,9 +22,9 @@ function Footer() {
   return (
     <footer>
       <div className=" dark:bg-white  grid grid-cols-1  px-6 py-14 m-auto md:grid-cols-4 lg:grid-cols-4   gap-6  ">
-        <div className="w-full h-25 lg:order-4 lg:col-span-1 flex justify-end flex-col">
+        <div className="w-full h-25 lg:order-4 md:col-span-2 lg:col-span-1 flex justify-end flex-col">
           <p className="font-medium dark:text-black">عضویت در خبرنامه</p>
-          <div className="bg-[#FFFFFF] flex justify-between rounded-[7px] p-2 mt-2 lg:w-90 dark:bg-black">
+          <div className="bg-[#FFFFFF] flex justify-between rounded-[7px] p-2 mt-2 lg:w-90 md:w-2s0 dark:bg-black">
             <input
               type="email"
               value={email}
@@ -42,16 +42,20 @@ function Footer() {
           </div>
         </div>
         <div className="w-full lg:order-3 lg:col-span-1  lg:px-4 grid grid-cols-1 lg:grid-cols-4 gap-6 peer-[]:">
-          <div className="mb-6 grid grid-cols-7  items-center ">
+          <div className="lg:mb-5 md:mt-15 lg:mt-0 grid grid-cols-7  items-center ">
             <input type="checkbox" id="a1" className="hidden peer" />
             <label
               htmlFor="a1"
-              className="col-span-5 dark:text-black cursor-pointer w-full lg:w-100"
+              className="col-span-5 md:col-span-6   dark:text-black cursor-pointer w-full lg:w-100"
             >
               پربازدیدترین صفحات
             </label>
-            <div className="w-full mb-5  lg:w-200 h-10 col-span-8 hidden lg:block max-lg:peer-checked:block">
-              <ul className="text-xs  flex flex-col max-lg:bg-gray-700 max-lg:rounded-lg max-lg:*:px-4 *py-2 max-lg:divide-y divide-gray-100 max:lg-mt-2 p-1">
+            <img
+              src="/svg/arrow-bottom.svg"
+              className="bg-white lg:hidden mr-18 rounded-full w-5  hs-5 peer-checked:rotate-180  "
+            />
+            <div className="w-full max-md:mb-5 mt-2  lg:w-200 h-10 col-span-8 hidden lg:block max-lg:peer-checked:block">
+              <ul className="text-xs  flex flex-col max-lg:bg-gray-700 dark:bg-gray-200 max-lg:rounded-lg max-lg:*:px-4 *py-2 max-lg:divide-y divide-gray-100 max:lg-mt-2 p-1">
                 <Link href="/sellgame" className="mb-2 dark:text-black ">
                   جدیدترین بازی ها
                 </Link>
@@ -68,7 +72,7 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className="w-full h-20 lg:order-3 px-4 max-lg:mt-12  ">
+        <div className="w-full h-20 lg:order-3 md:col-span-2 lg:col-span-1 px-4 lg:mt-5 max-lg:mt-12  ">
           <img src="/images/enamad.webp" alt="" className="w-16" />
         </div>
       </div>

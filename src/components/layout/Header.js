@@ -14,10 +14,15 @@ function Header() {
   const [open, setOpen] = useState(false);
   useEffect(() => setMounted(true), []);
   if (!mounted) {
-    return <button className="p-2 rounded  dark:bg-gray-7s00">...</button>;
+    return <button className="p-2 rounded  dark:bg-gray-7s00"></button>;
   }
   return (
-    <div className=" dark:bg-white w-full m-auto px-4 py-4">
+    <div className=" dark:bg-white w-full m-auto">
+      <div className="h-13 md:h-[70px] bg-[#f13a0352]  flex items-center justify-center">
+        <p className="lg:text-2xl text-sm font-semibold bg-gradient-to-r from-red-500 via-yellow-400 to-pink-500  bg-clip-text text-transparent ">
+          تا ۷۰٪ تخفیف شگفت‌انگیز! ⏳ فقط برای مدت محدود !
+        </p>
+      </div>
       <div className="flex justify-between items-center    px-6 py-4  lg:px-8 lg:py-14  gap-8">
         <div className="flex items-center text-center gap-2 lg:gap-6 ">
           <img src="/svg/game.svg" className="size-10 lg:size-20 ml-5" />

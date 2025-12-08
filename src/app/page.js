@@ -19,7 +19,7 @@ export default function Home() {
       <Banner />
       <VideoShowcase />
       {/* </main> */}
-      <Treyler />
+      {/* <Treyler /> */}
       <TrailerGrid />
       <Aboutus />
       {/* <CartPage /> */}

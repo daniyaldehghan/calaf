@@ -63,11 +63,11 @@ function Banner() {
               </button>
             </div>
             {/* کارت */}
-            <div className="max-lg:w-full h-[400px] lg:h-[750px]  bg-white dark:bg-gray-800 rounded-2xl shadow-xl flex flex-col items-center justify-center text-center transition">
+            <div className="max-lg:w-full h-[400px] lg:h-[750px]   bg-white dark:bg-gray-800 rounded-2xl shadow-xl flex flex-col items-center justify-center text-center transition">
               <img
                 src={cards[index].img}
                 alt={cards[index].title}
-                className="max-lg:w-full h-[400px] lg:h-[750px] lg:w-[800px] rounded-xl"
+                className="max-lg:w-full   h-[400px] lg:h-[750px]  lg:w-[800px] rounded-xl"
               />
               {/* <h2 className="text-lg font-bold">{cards[index].title}</h2> */}
               <p className="text-gray-500 dark:text-gray-300">
@@ -78,7 +78,7 @@ function Banner() {
             src="/images/poster1.png"
             className="max-lg:w-full h-[400px] rounded-xl "
             /> */}
-            <div className="relative -top-45 lg:-top-60 px-8 p-4 bg-[#00000063] rounded-sm">
+            <div className="relative -top-50  w-full  lg:px-8 p-4 bg-[#00000063] rounded-sm">
               <div className="flex  gap-4 mb-5 ">
                 <span className="text-xs bg-[#6C5DD3] rounded-sm w-15 h-4 text-center opacity-80">
                   {cards[index].sabk}
@@ -88,11 +88,11 @@ function Banner() {
                   {cards[index].category}
                 </span>
               </div>
-              <h4 className="text-2xl lg:4xl font-semibold">
+              <h4 className="text-xl lg:4xl font-semibold">
                 {/* بازی Hello Neighbor منتشر شد */}
                 {cards[index].name}
               </h4>
-              <p className="text-xs lg:text-xl mb-5 lg:w-120 ">
+              <p className="text-xs lg:text-xl mb-10 lg:mb-1 ">
                 {/* سلام همسsایه از خاص ترین، زیباترین و محبوب ترین بازیهای ماجراجویی
                 – ترسناک با ساخت فوق العاده از tinyBuild برای اندروید است که
                 دقایقی پیش ... */}
@@ -104,8 +104,8 @@ function Banner() {
             </div>
           </div>
         </div>
-        <div className="hidden lg:block relative -top-30   ">
-          <div className="bg-gray-800 dark:bg-gray-300 w-170 h-60  rounded-3xl flex gap-10 px-2  items-center  hover:bg-[#6C5DD34A] ">
+        <div className="hidden lg:flex flex-col relative md:-top-25 grow-7   ">
+          <div className="bg-gray-800 dark:bg-gray-300 lg:w-170  grow-s3 md:w-20   grow-[2px] h-60  rounded-3xl flex gap-10 px-2  items-center  hover:bg-[#6C5DD34A] ">
             <img
               src="/images/nba.png"
               className="w-60 rounded-3xl h-[220px] "
