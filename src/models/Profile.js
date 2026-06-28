@@ -1,0 +1,58 @@
+import { Schema, model, models } from "mongoose";
+
+const profileSchema = new Schema(
+  {
+    title: {
+      type: String,
+      required: true,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    location: {
+      type: String,
+      required: true,
+    },
+    phone: {
+      type: String,
+      required: true,
+    },
+    price: {
+      type: Number,
+      required: true,
+    },
+    constructionDate: {
+      type: Date,
+      required: true,
+    },
+    category: {
+      type: String,
+      enum: ["ps5", "xbox", "ps4", "pc", "all"],
+      required: true,
+    },
+    story: {
+      type: String,
+      enum: ["کارکرده", "نو", "درحدنو"],
+      required: true,
+    },
+
+    published: {
+      type: Boolean,
+      default: false,
+    },
+    userId: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
+  },
+  { timestamps: true }
+);
+
+const Profile = models.Profile || model("Profile", profileSchema);
+
+export default Profile;
