@@ -1,13 +1,13 @@
 "use client";
 import { sp } from "@/src/utils/replaceNumber";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
-function AdminCard({
-  data: { _id, name, title, description, location, price },
-}) {
+function AdminCard({ data }) {
+  const { _id, name, title, description, location, price } = data;
   const router = useRouter();
+ 
   const publishedHandler = async () => {
     const res = await fetch(`/api/profile/publish/${_id}`, { method: "PATCH" });
     const result = await res.json();
@@ -27,6 +27,10 @@ function AdminCard({
       toast.success(result.message);
       router.refresh();
     }
+  };
+
+  const editHandler = () => {
+    router.push(`/dashboard/my-profile/${data._id}`);
   };
   return (
     <div className=" ">
@@ -50,6 +54,12 @@ function AdminCard({
             className="bg-red-500 p-1 cursor-pointer rounded-sm w-25"
           >
             عدم انتشار
+          </button>
+          <button
+            onClick={editHandler}
+            className="bg-blue-500 p-1 cursor-pointer rounded-sm w-25"
+          >
+            ویرایش
           </button>
         </div>
         <Toaster />

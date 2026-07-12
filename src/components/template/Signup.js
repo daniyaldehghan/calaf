@@ -4,13 +4,13 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import Loader from "../module/Loader";
-
 function Signup() {
   const [loading, isloading] = useState(false);
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [repassword, setrepassword] = useState("");
   const router = useRouter();
+  const reset = password !== repassword;
   const submitHandler = async (e) => {
     e.preventDefault();
     if (password !== repassword) {
@@ -27,7 +27,7 @@ function Signup() {
     isloading(false);
     if (res.status === 201) {
       toast.success("حساب کاربری با موفقیت ایجاد شد.");
-      router.push("/signin");
+      // router.push("/signin");
     } else {
       toast.error(data.error);
       return;
@@ -77,9 +77,10 @@ function Signup() {
                   <Loader />
                 ) : (
                   <button
+                    disabled={password !== repassword}
                     type="submit"
                     onClick={submitHandler}
-                    className="mt-5 cursor-pointer tracking-wide font-semibold bg-green-400 text-white-500 w-full py-4 rounded-lg hover:bg-green-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
+                    className=" disabled:bg-gray-500 mt-5 cursor-pointer tracking-wide font-semibold bg-green-400 text-white-500 w-full py-4 rounded-lg hover:bg-green-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
                   >
                     <span className=""> ثبت نام</span>
                   </button>
